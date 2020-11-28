@@ -39,10 +39,13 @@ func TestHomePageName(t *testing.T) {
 	req, err := http.NewRequest(method, url, nil)
 
 	if err != nil {
-		t.Errorf("Homepage returned error.")
+		t.Errorf("Homepage returned error while making request.")
 	}
 
 	res, err := client.Do(req)
+	if err != nil {
+		t.Errorf("Homepage returned error while getting response.")
+	}
 
 	if res.StatusCode != 200 {
 		t.Errorf("Homepage did not return status 200. Got: %d", res.StatusCode)
@@ -50,6 +53,10 @@ func TestHomePageName(t *testing.T) {
 
 	defer res.Body.Close()
 	body, err := ioutil.ReadAll(res.Body)
+
+	if err != nil {
+		t.Errorf("Homepage returned error while fetching body.")
+	}
 
 	if string(body) != "Hello Sarah!" {
 		t.Errorf("Homepage did not return Hello World! Got: " + string(body))
