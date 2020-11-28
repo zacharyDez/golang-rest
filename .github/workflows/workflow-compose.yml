@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: docker-compose run web go test /go/src/main_test.go
+        run: curl http://localhost:9090
