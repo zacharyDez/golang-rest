@@ -1,6 +1,15 @@
 version: "3.8"
 services:
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: web.dockerfile
     ports:
       - "9090:9090"
+  uat:
+    build: 
+      context: .
+      dockerfile: uat.dockerfile
+    command: go test /go/src/main_test.go
+    depends_on: 
+      - web

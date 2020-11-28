@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: curl http://localhost:9090
+        run: docker-compose run uat 

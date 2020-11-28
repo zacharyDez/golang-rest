@@ -7,7 +7,7 @@ import (
 )
 
 func TestHomePageHelloWorld(t *testing.T) {
-	url := "http://localhost:9090"
+	url := "http://web:9090"
 	method := "GET"
 
 	client := &http.Client{}
@@ -32,7 +32,7 @@ func TestHomePageHelloWorld(t *testing.T) {
 }
 
 func TestHomePageName(t *testing.T) {
-	url := "http://localhost:9090?name=Sarah"
+	url := "http://web:9090?name=Sarah"
 	method := "GET"
 
 	client := &http.Client{}
