@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: docker-compose run web go test src/src/
+        run: docker-compose run web go test /go/src/main_test.go
