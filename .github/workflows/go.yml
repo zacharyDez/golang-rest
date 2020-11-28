@@ -30,7 +30,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build src/main
+      run: go build -v ./...
 
     - name: Test
-      run: ./main && go test src
+      run: ./main && go test -v ./...
